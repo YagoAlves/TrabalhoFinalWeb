@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+
+#loginDiv{
+    Width: 400px;
+    Margin: auto;
+}
+
+#titulo{
+	text-align: center;
+}
+
+#loginCadastro {
+	text-align: right;	
+}
+
+#listaNoticia {
+	text-align: left;
+}
+
+#noticiaCompleta {
+    text-align: center;
+	Width: 400px;
+    Margin: auto;
+}
+
+#inserirNoticia{
+    Width: 400px;
+    Margin: auto;
+}
+
+#inserirClassificado{
+    Width: 400px;
+    Margin: auto;
+}
+
+#inserirUsuario{
+    Width: 400px;
+    Margin: auto;
+}
+
+#inserirJornalista{
+    Width: 400px;
+    Margin: auto;
+}
+
+#inserirEditor{
+    Width: 400px;
+    Margin: auto;
+}
+
+#inserirSecao{
+    Width: 400px;
+    Margin: auto;
+}
+
+#jornalista{
+    Width: 400px;
+    Margin: auto;
+}
+
+
+#editor{
+    Width: 400px;
+    Margin: auto;
+}
+
+
+
+
+
+
+

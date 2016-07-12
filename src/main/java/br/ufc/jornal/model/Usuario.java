@@ -24,11 +24,17 @@ public class Usuario {
 	private String email;
 	private String login;
 	private String senha;
+	private String caminho;
 	
 	@OneToMany(mappedBy="classificados",
 			   targetEntity=Usuario.class,
 			   fetch = FetchType.EAGER)
-	private List<Classificado> classificados;	
+	private List<Classificado> classificados;
+	
+	@OneToMany(mappedBy="noticias",
+			   targetEntity=Usuario.class,
+			   fetch = FetchType.EAGER)
+	private List<Noticia> noticias;
 	
 	@OneToMany(mappedBy="comentarios",
 			   targetEntity=Usuario.class,
@@ -43,6 +49,26 @@ public class Usuario {
 									   referencedColumnName="id")
 			  )
 	private List<Papel> papeis;
+	
+	public List<Noticia> getNoticias() {
+		return noticias;
+	}
+	public void setNoticias(List<Noticia> noticias) {
+		this.noticias = noticias;
+	}
+	
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
+	public List<Papel> getPapeis() {
+		return papeis;
+	}
+	public void setPapeis(List<Papel> papeis) {
+		this.papeis = papeis;
+	}
 	
 	public Long getId() {
 		return id;
@@ -79,6 +105,12 @@ public class Usuario {
 	}
 	public void setClassificados(List<Classificado> classificados) {
 		this.classificados = classificados;
+	}
+	public String getCaminho() {
+		return caminho;
+	}
+	public void setCaminho(String caminho) {
+		this.caminho = caminho;
 	}
 	
 	

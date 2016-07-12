@@ -1,6 +1,6 @@
 package br.ufc.jornal.model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity(name="classificado")
@@ -17,7 +18,7 @@ public class Classificado {
 			updatable=false,
 			nullable=false)
 	private Long id_usuario;
-	
+
 	@ManyToOne(optional=false)
 	@JoinColumn(name="id_usuario", 
 	referencedColumnName="id")
@@ -28,12 +29,27 @@ public class Classificado {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	private Long id;
+	@Lob
 	private String titulo;
+	@Lob
 	private String texto; 
 	private float preco;
 	private String telefone;
 	private float melhor_oferta;
-	private Date data_oferta;
+	private Calendar data_oferta;
+	
+	public Long getId_usuario() {
+		return id_usuario;
+	}
+	public void setId_usuario(Long id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	
 	public Long getId() {
 		return id;
@@ -71,19 +87,20 @@ public class Classificado {
 	public void setMelhor_oferta(float melhor_oferta) {
 		this.melhor_oferta = melhor_oferta;
 	}
-	public Date getData_oferta() {
-		return data_oferta;
-	}
-	public void setData_oferta(Date data_oferta) {
-		this.data_oferta = data_oferta;
-	}
-	public Long getId_usuario() {
+	
+	/*public Long getId_usuario() {
 		return id_usuario;
 	}
 	public void setId_usuario(Long id_usuario) {
 		this.id_usuario = id_usuario;
-	}
+	}*/
 	
+	public Calendar getData_oferta() {
+		return data_oferta;
+	}
+	public void setData_oferta(Calendar data_oferta) {
+		this.data_oferta = data_oferta;
+	}
 	@Override
 	public boolean equals(Object obj) {
 

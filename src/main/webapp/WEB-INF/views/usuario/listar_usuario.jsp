@@ -17,7 +17,7 @@
 			<td>${usuario.login}</td>
 			<td>${usuario.nome}</td>
 			<td><a href="apagarUsuario?id=${usuario.id}">APAGAR</a></td>
-			<td><a href="alterarUsuarioFormulario?id=${usuarios.id}">ALTERAR</a></td>
+			<td><a href="alterarUsuarioFormulario?id=${usuario.id}">ALTERAR</a></td>
 		</tr>
 	</c:forEach>
 	</table>	

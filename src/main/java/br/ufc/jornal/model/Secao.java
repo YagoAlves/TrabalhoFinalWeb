@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 @Entity(name="secao")
@@ -18,7 +19,9 @@ public class Secao {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String titulo;
+	@Lob
 	private String descricao;
+	private boolean ativo;
 	
 	@OneToMany(mappedBy="secao",
 			   targetEntity=Noticia.class,
@@ -49,5 +52,10 @@ public class Secao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
+	public boolean isAtivo() {
+		return ativo;
+	}
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
 }

@@ -10,10 +10,10 @@
 <body>
 	<h2>Listar Seção</h2>
 	<table border="1">
-	<c:forEach var="secao" items="${secoes}">
+	<c:forEach var="classificado" items="${classificados}">
 		<tr>
-			<td>${secao.titulo}</td>
-			<td>${secao.descricao}</td>
+			<td>${classificado.titulo}</td>
+			<td>${classificado.descricao}</td>
 			<td><a href="apagarSecao?id=${secao.id}">APAGAR</a></td>
 			<td><a href="alterarSecaoFormulario?id=${secao.id}">ALTERAR</a></td>
 		</tr>

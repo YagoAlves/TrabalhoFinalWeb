@@ -23,14 +23,15 @@ public class SecaoController {
 	
 	@RequestMapping("/inserirSecao")
 	public String inserirSecao(Secao secao){
+		secao.setAtivo(true);
 		secaoDAO.save(secao);
 		return "redirect:listarSecao";
 	}
 	
 	@RequestMapping("/listarSecao")
 	public String listarSecao(Model model){
-		List<Secao> secoes = secaoDAO.findAll();
-		model.addAttribute("secao", secoes);
+		List<Secao> secoes = secaoDAO.findByAtivoTrue();
+		model.addAttribute("secoes", secoes);
 		return "secao/listar_secao";
 	}
 	
